@@ -1,0 +1,477 @@
+/* ============================================
+   PT SAMUDRA SAKTI RAYA - Company Profile
+   Modern Light Theme CSS
+   ============================================ */
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+/* img section */
+.lg\:max-w-2xl {
+    height: 39rem !important;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0077e6, #005bb3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #005bb3, #003f80);
+}
+
+/* Text Gradient */
+.text-gradient {
+    background: linear-gradient(135deg, #0077e6 0%, #00b36b 50%, #0077e6 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+}
+
+.text-gradient-blue {
+    background: linear-gradient(135deg, #003f80 0%, #0077e6 50%, #005bb3 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Simple Hero Section */
+.hero-simple {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Why Choose Us Section */
+.why-choose-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-bg {
+    background: url('img/background-pemandangan.png') center center/cover no-repeat fixed;
+}
+
+.why-choose-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(15, 39, 68, 0.92) 0%,
+        rgba(0, 91, 179, 0.88) 50%,
+        rgba(0, 128, 76, 0.85) 100%
+    );
+}
+
+/* Projects Section */
+.projects-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-bg {
+    background: url('img/background-pemandangan.png') center bottom/cover no-repeat fixed;
+}
+
+.projects-overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(15, 39, 68, 0.95) 0%,
+        rgba(0, 119, 230, 0.85) 100%
+    );
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-slide-up-delay {
+    animation: slide-up 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.animate-slide-up-delay-2 {
+    animation: slide-up 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.hero-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Navigation */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0077e6, #00e68a);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Cards Hover Effects */
+.service-card,
+.stat-card,
+.why-card,
+.project-card,
+.contact-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stat Cards - Blue Gradient Hover */
+.stat-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.stat-card:hover {
+    background: linear-gradient(135deg, #e6f3ff 0%, #b3dbff 50%, #e6fff5 100%);
+    border-color: #80c4ff;
+    box-shadow: 0 20px 40px -12px rgba(0, 119, 230, 0.25);
+}
+
+/* Service Cards (in Core Services) - Modern Color Shift */
+.group.bg-white.rounded-2xl:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #ecfdf5 100%) !important;
+}
+
+/* Why Choose Us Cards - Accent Gradient Hover */
+.why-card:hover,
+#why-us .group.bg-white:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #e6fff5 50%, #e6f3ff 100%) !important;
+    border-color: #4dffb8 !important;
+    box-shadow: 0 20px 40px -12px rgba(0, 230, 138, 0.2) !important;
+}
+
+/* Project Cards - Dynamic Gradient Border Effect */
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    padding: 2px;
+    background: linear-gradient(135deg, #0077e6, #00e68a, #0077e6);
+    background-size: 200% 200%;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease, background-position 0.6s ease;
+    z-index: 1;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+    animation: gradient-border 3s ease infinite;
+}
+
+@keyframes gradient-border {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.project-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 119, 230, 0.3);
+}
+
+/* Contact Cards - Warm Gradient Hover */
+.contact-card:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #fff7ed 50%, #fef3c7 100%) !important;
+    border-color: #fbbf24 !important;
+    box-shadow: 0 20px 40px -12px rgba(251, 191, 36, 0.2) !important;
+}
+
+/* Shine Effect on Hover for All Cards */
+.stat-card::after,
+.contact-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.stat-card:hover::after,
+.contact-card:hover::after {
+    left: 100%;
+}
+
+/* Core Services Section Cards Hover */
+#services .group.bg-white:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #e6f3ff 30%, #e6fff5 70%, #ffffff 100%) !important;
+    border-color: #80c4ff !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 119, 230, 0.25) !important;
+}
+
+/* Icon Container Glow on Card Hover */
+.stat-card:hover .w-16,
+.contact-card:hover .w-16,
+#services .group:hover .w-20,
+#why-us .group:hover .w-20 {
+    box-shadow: 0 0 30px rgba(0, 119, 230, 0.4);
+}
+
+/* Button Styles */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Material Symbols Configuration */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.98) 0%,
+            rgba(255, 255, 255, 0.95) 100%
+        );
+    }
+    
+    .why-choose-overlay,
+    .projects-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(15, 39, 68, 0.95) 0%,
+            rgba(0, 91, 179, 0.95) 100%
+        );
+    }
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading Animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e6f3ff;
+    border-top-color: #0077e6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Pulse Animation for Stats */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.7);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+.stat-card .material-symbols-outlined {
+    position: relative;
+}
+
+/* Parallax Effect Helper */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+#mobile-menu.show {
+    max-height: 500px;
+}
+
+/* Focus States for Accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid #0077e6;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .hero-bg,
+    .why-choose-bg,
+    .projects-bg,
+    #back-to-top,
+    #mobile-menu-btn {
+        display: none !important;
+    }
+    
+    body {
+        color: #000 !important;
+        background: #fff !important;
+    }
+}
